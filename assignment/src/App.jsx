@@ -10,10 +10,12 @@ import OrderForm from './components/Order/OrderForm';
 import OrderDetails from './components/Order/OrderDetails';
 import OrderList from './components/Order/OrderList';
 import HomePage from './components/HomePage';
+import NavigationBar from "./components/NavigationBar";
 
 const App = () => {
   return (
     <Router>
+      <NavigationBar />
       <Routes>
         <Route path='/' element={<HomePage/>} />
         <Route path="/customers" element={<CustomerList />} />

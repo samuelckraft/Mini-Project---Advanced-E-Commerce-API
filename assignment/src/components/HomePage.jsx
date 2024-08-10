@@ -3,6 +3,7 @@ function HomePage() {
         <div>
             <h1>Welcome to our E-commerce app</h1>
             <p>This is the place to find all your needs at one click</p>
+            
         </div>
     )
 }

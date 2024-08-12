@@ -11,7 +11,7 @@ const OrderForm = () => {
     const fetchCustomers = async () => {
       try {
         const response = await axios.get('/api/customers');
-        setCustomers(response.data);
+        console.log(response.data);
       } catch (error) {
         console.error('Error fetching customers:', error);
       }

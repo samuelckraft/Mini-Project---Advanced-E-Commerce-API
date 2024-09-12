@@ -1,1 +1,35 @@
-Once application is running (using "npm run dev" in command line), open the browser to your local server. Once there, there should be a home page with a nav bar giving options to view, edit/delete or add customers, products, and orders. The homepage is located at 'local-server/' and to view navigate to 'local-server/{element}', to add go to 'local-server/{element}/new' and to edit/delete go to 'local-server/{element}/{element ID}'
+# Advanced React API
+
+Records and stores data for an e-commerce platform, including customers, products and orders. This connects to a back-end API that I developed using Flask. You can find that back-end API here: https://github.com/samuelckraft/Project---E-Commerce-API.git.
+
+Make sure to clone and run the API before running the React application. 
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/samuelckraft/Project---Advanced-React-API.git
+```
+
+Go to the project directory
+
+```bash
+  cd assignment
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+
+
+## Author - Sam Kraft
+
+- [@samuelckraft](https://github.com/samuelckraft)

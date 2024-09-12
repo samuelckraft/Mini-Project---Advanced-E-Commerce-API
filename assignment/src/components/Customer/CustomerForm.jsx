@@ -8,7 +8,7 @@ const CustomerForm = ({ customerId }) => {
       if (customerId) {
         const fetchCustomer = async () => {
           try {
-            const response = await axios.get(`/api/customers/${customerId}`);
+            const response = await axios.get(`http://127.0.0.1:5000/customers/${customer_id}`);
             setCustomer(response.data);
           } catch (error) {
             console.error('Error fetching customer details:', error);
@@ -26,10 +26,10 @@ const CustomerForm = ({ customerId }) => {
       e.preventDefault();
       try {
         if (customerId) {
-          await axios.put(`/api/customers/${customerId}`, customer);
+          await axios.put(`http://127.0.0.1:5000/customers/${customer_id}`, customer);
           alert('Customer updated successfully!');
         } else {
-          await axios.post('/api/customers', customer);
+          await axios.post('http://127.0.0.1:5000/customers', customer);
           alert('Customer added successfully!');
         }
       } catch (error) {

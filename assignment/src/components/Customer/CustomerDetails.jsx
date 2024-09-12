@@ -7,7 +7,7 @@ const CustomerDetails = ({ match }) => {
     useEffect(() => {
       const fetchCustomer = async () => {
         try {
-          const response = await axios.get(`/api/customers/${match.params.id}`);
+          const response = await axios.get(`http://127.0.0.1:5000/customers/${match.params.id}`);
           setCustomer(response.data);
         } catch (error) {
           console.error('Error fetching customer details:', error);
@@ -19,7 +19,7 @@ const CustomerDetails = ({ match }) => {
   
     const handleDelete = async () => {
       try {
-        await axios.delete(`/api/customers/${match.params.id}`);
+        await axios.delete(`http://127.0.0.1:5000/customers/${match.params.id}`);
         alert('Customer deleted successfully!');
       } catch (error) {
         console.error('Error deleting customer:', error);

@@ -8,7 +8,7 @@ const OrderList = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get('/api/orders');
+        const response = await axios.get('http://127.0.0.1:5000/orders');
         setOrders(response.data);
       } catch (error) {
         console.error('Error fetching orders:', error);
@@ -24,7 +24,7 @@ const OrderList = () => {
       <ul>
         {orders.map(order => (
           <li key={order.id}>
-            <Link to={`/orders/${order.id}`}>Order {order.id} - {order.orderDate}</Link>
+            <Link to={`/orders/${order.id}`}>Order {order.id} - {order.date}</Link>
           </li>
         ))}
       </ul>

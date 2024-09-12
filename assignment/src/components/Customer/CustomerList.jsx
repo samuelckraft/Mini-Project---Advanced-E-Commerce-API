@@ -8,7 +8,7 @@ const CustomerList = () => {
   useEffect(() => {
     const fetchCustomers = async () => {
       try {
-        const response = await axios.get('/api/customers');
+        const response = await axios.get('http://127.0.0.1:5000/customers');
         setCustomers(response.data);
       } catch (error) {
         console.error('Error fetching customers:', error);

@@ -7,7 +7,7 @@ const ProductDetails = ({ match }) => {
     useEffect(() => {
       const fetchProduct = async () => {
         try {
-          const response = await axios.get(`/api/products/${match.params.id}`);
+          const response = await axios.get(`http://127.0.0.1:5000/products/${match.params.id}`);
           setProduct(response.data);
         } catch (error) {
           console.error('Error fetching product details:', error);
@@ -19,7 +19,7 @@ const ProductDetails = ({ match }) => {
   
     const handleDelete = async () => {
       try {
-        await axios.delete(`/api/products/${match.params.id}`);
+        await axios.delete(`http://127.0.0.1:5000/products/${match.params.id}`);
         alert('Product deleted successfully!');
       } catch (error) {
         console.error('Error deleting product:', error);

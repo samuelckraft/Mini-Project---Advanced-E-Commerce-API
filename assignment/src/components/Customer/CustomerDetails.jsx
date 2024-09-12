@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 const CustomerDetails = ({ match }) => {
     const [customer, setCustomer] = useState(null);
+    const {id} = useParams();
+
   
     useEffect(() => {
       const fetchCustomer = async () => {
         try {
-          const response = await axios.get(`http://127.0.0.1:5000/customers/${match.params.id}`);
+          const response = await axios.get(`http://127.0.0.1:5000/customers/${id}`);
           setCustomer(response.data);
         } catch (error) {
           console.error('Error fetching customer details:', error);
@@ -15,11 +18,11 @@ const CustomerDetails = ({ match }) => {
       };
   
       fetchCustomer();
-    }, [match.params.id]);
+    }, [id]);
   
     const handleDelete = async () => {
       try {
-        await axios.delete(`http://127.0.0.1:5000/customers/${match.params.id}`);
+        await axios.delete(`http://127.0.0.1:5000/customers/${id}`);
         alert('Customer deleted successfully!');
       } catch (error) {
         console.error('Error deleting customer:', error);

@@ -8,12 +8,10 @@ const OrderDetails = ({ match }) => {
     const [order, setOrder] = useState(null);
     const {id} = useParams();
 
-    console.log(match)
 
     useEffect(() => {
       const fetchOrder = async () => {
         try {
-          console.log(match)
           const response = await axios.get(`http://127.0.0.1:5000/orders/${id}`);
           setOrder(response.data);
         } catch (error) {
@@ -22,7 +20,7 @@ const OrderDetails = ({ match }) => {
       };
   
       fetchOrder();
-    }, [id]);
+    }, []);
   
     if (!order) return <div>Loading...</div>;
   
@@ -31,12 +29,6 @@ const OrderDetails = ({ match }) => {
         <h1>Order Details</h1>
         <p>Order Date: {order.date}</p>
         <p>Customer: {order.customer_id}</p>
-        <ul>
-          {order.products.map(product => (
-            <li key={product.id}>{product.name}</li>
-          ))}
-        </ul>
-        <p>Status: {order.status}</p>
       </div>
     );
   };
